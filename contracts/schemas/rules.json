@@ -1,0 +1,62 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "version",
+      "description",
+      "validation",
+      "severity",
+      "scope",
+      "left_type",
+      "right_type",
+      "field",
+      "operation",
+      "tolerance"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "version": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "validation": {
+        "const": "demo/unvalidated"
+      },
+      "severity": {
+        "enum": [
+          "warning",
+          "error"
+        ]
+      },
+      "scope": {
+        "const": "shipment"
+      },
+      "left_type": {
+        "type": "string"
+      },
+      "right_type": {
+        "type": "string"
+      },
+      "field": {
+        "type": "string"
+      },
+      "operation": {
+        "enum": [
+          "decimal_equal",
+          "set_equal",
+          "invoice_total"
+        ]
+      },
+      "tolerance": {
+        "type": "string"
+      }
+    }
+  }
+}

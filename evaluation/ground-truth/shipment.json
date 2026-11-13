@@ -1,0 +1,1 @@
+{"synthetic":true,"mismatches":[{"rule_id":"gross-weight","left":"1000","right":"1050","unit":"kg"}],"match_rules":["packages","containers","seals","invoice-reference","invoice-total"],"expected_mismatch_count":1,"accuracy_claim":false}

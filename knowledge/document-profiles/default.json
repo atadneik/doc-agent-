@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "fields": [
+    "invoice_number",
+    "invoice_date",
+    "seller",
+    "buyer",
+    "shipper",
+    "consignee",
+    "bl_number",
+    "container",
+    "seal",
+    "goods",
+    "packages",
+    "quantity",
+    "net_weight",
+    "gross_weight",
+    "unit_price",
+    "line_amount",
+    "total_amount",
+    "tax",
+    "fees",
+    "discount",
+    "origin"
+  ],
+  "note": "Keep party roles distinct. shipment totals only when explicitly labelled; never sum mixed units."
+}

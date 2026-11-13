@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decision",
+    "note"
+  ],
+  "properties": {
+    "decision": {
+      "enum": [
+        "confirmed",
+        "rejected",
+        "needs_check"
+      ]
+    },
+    "note": {
+      "type": "string",
+      "maxLength": 4000
+    }
+  }
+}

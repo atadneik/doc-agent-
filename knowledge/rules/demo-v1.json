@@ -1,0 +1,80 @@
+[
+  {
+    "id": "gross-weight",
+    "version": "1.0.0",
+    "description": "Tổng gross weight Packing List / B/L",
+    "validation": "demo/unvalidated",
+    "severity": "warning",
+    "scope": "shipment",
+    "left_type": "packing_list",
+    "right_type": "bill_of_lading",
+    "field": "gross_weight",
+    "operation": "decimal_equal",
+    "tolerance": "0.5"
+  },
+  {
+    "id": "packages",
+    "version": "1.0.0",
+    "description": "Số kiện Packing List / B/L",
+    "validation": "demo/unvalidated",
+    "severity": "warning",
+    "scope": "shipment",
+    "left_type": "packing_list",
+    "right_type": "bill_of_lading",
+    "field": "packages",
+    "operation": "decimal_equal",
+    "tolerance": "0"
+  },
+  {
+    "id": "containers",
+    "version": "1.0.0",
+    "description": "Container giữa các chứng từ",
+    "validation": "demo/unvalidated",
+    "severity": "warning",
+    "scope": "shipment",
+    "left_type": "*",
+    "right_type": "*",
+    "field": "container",
+    "operation": "set_equal",
+    "tolerance": "0"
+  },
+  {
+    "id": "seals",
+    "version": "1.0.0",
+    "description": "Seal giữa các chứng từ",
+    "validation": "demo/unvalidated",
+    "severity": "warning",
+    "scope": "shipment",
+    "left_type": "*",
+    "right_type": "*",
+    "field": "seal",
+    "operation": "set_equal",
+    "tolerance": "0"
+  },
+  {
+    "id": "invoice-reference",
+    "version": "1.0.0",
+    "description": "Số Invoice được tham chiếu",
+    "validation": "demo/unvalidated",
+    "severity": "warning",
+    "scope": "shipment",
+    "left_type": "invoice",
+    "right_type": "*",
+    "field": "invoice_number",
+    "operation": "set_equal",
+    "tolerance": "0"
+  },
+  {
+    "id": "invoice-total",
+    "version": "1.0.0",
+    "description": "Tổng dòng hàng và tổng tiền Invoice",
+    "validation": "demo/unvalidated",
+    "severity": "warning",
+    "scope": "shipment",
+    "left_type": "invoice",
+    "right_type": "invoice",
+    "field": "total_amount",
+    "operation": "invoice_total",
+    "tolerance": "0.01"
+  }
+]

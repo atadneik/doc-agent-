@@ -1,0 +1,13 @@
+from typing import Protocol, Iterator, Any
+
+class Runtime(Protocol):
+    identity: str
+    metrics: list[dict]
+    def infer(self, role: str, page: dict, context: dict) -> dict: ...
+
+class Documents(Protocol):
+    def pages(self, document: dict) -> Iterator[dict]: ...
+
+class Repository(Protocol):
+    def claim(self, job_id: str, token: str) -> dict | None: ...
+    def save(self, job: dict, token: str, result: dict) -> None: ...

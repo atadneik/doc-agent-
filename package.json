@@ -1,0 +1,15 @@
+{
+  "name": "logistics-mvp",
+  "private": true,
+  "packageManager": "pnpm@10.18.3",
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "node scripts/contracts-test.mjs && node scripts/outbox-test.mjs",
+    "integration": "node scripts/integration.mjs",
+    "start": "node scripts/start-local.mjs"
+  },
+  "devDependencies": {
+    "ajv": "8.17.1",
+    "prettier": "3.6.2"
+  }
+}

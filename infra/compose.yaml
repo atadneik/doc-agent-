@@ -1,0 +1,35 @@
+name: logistics-mvp
+services:
+  mongo:
+    image: mongo:7.0.16
+    ports: ["127.0.0.1:27028:27017"]
+    volumes: ["mongo-data:/data/db"]
+    mem_limit: 768m
+    command: ["mongod", "--wiredTigerCacheSizeGB", "0.25"]
+    healthcheck:
+      test:
+        ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 5s
+      retries: 20
+  redis:
+    image: redis:7.4.2-alpine
+    ports: ["127.0.0.1:6389:6379"]
+    command:
+      [
+        "redis-server",
+        "--appendonly",
+        "yes",
+        "--maxmemory",
+        "128mb",
+        "--maxmemory-policy",
+        "noeviction",
+      ]
+    volumes: ["redis-data:/data"]
+    mem_limit: 192m
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      retries: 20
+volumes:
+  mongo-data:
+  redis-data:
